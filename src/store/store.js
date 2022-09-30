@@ -1,7 +1,7 @@
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, } from 'redux-persist';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import contactsReducer from './reducers/contactsReducer';
-import filterReducer from './reducers/filterReducer';
+import {filterReducer} from './filter/slice.filter';
 import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
