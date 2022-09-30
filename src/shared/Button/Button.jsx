@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import s from './button.module.css';
 
-export const Button = ({ type, dlt = false, sbmt = false, onClickHandler, children })=>{
+
+export const Button = ({ type, dlt = false, sbmt = false, onClickHandler, children, isLoading = false }) => {
+
 
     return (
         <button className={classNames(s.btn, {

@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import s from "./form.module.css";
 import { Button } from "../../shared/Button";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { addContact } from "store/actions/contactsActions";
+// import { addContact } from "store/actions/contactsActions";
+// import API from "services/api/contacts.api";
+import { addContactThunk } from "store/contacts/thunk.contacts";
 
+// API.addContact({name: 'cat', phone: '45654564'}).then(console.log).catch(console.log)
 
 export const Form =()=> {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
 
-    const contacts = useSelector(state=> state.contacts, shallowEqual)
+    const contacts = useSelector(state=> state.contacts.items, shallowEqual)
     const dispatch = useDispatch();
-    
+    // console.log(contacts)
     const onInputChange = e => {
         switch (e.currentTarget.name) {
             case 'name':
@@ -28,13 +31,13 @@ export const Form =()=> {
     
     const onFormSubmit = e => {
         e.preventDefault();
-        const newContact = { id: nanoid(), name, number };
+        const newContact = { name, number };
         
         if (contacts.some(({ name }) => name === newContact.name)) {
             alert(`${newContact.name} is already in contacts!`);
             return;
         }
-        dispatch(addContact(newContact))
+        dispatch(addContactThunk(newContact))
         formReset();
     }
     const formReset = () => {

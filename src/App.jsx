@@ -3,10 +3,13 @@ import { ContactsList } from './components/Contacts-list';
 import { Form } from './components/Form';
 import { Filter } from './components/Filter';
 import { Section } from './shared/Section';
-import { EmptyNotification } from './components/Empty-notification';
+import { ThreeDots } from 'react-loader-spinner';
+// import { EmptyNotification } from './components/Empty-notification';
 
 export const App = () => {
-  const contacts = useSelector(state => state.contacts, shallowEqual);
+    const isLoading = useSelector(state=> state.contacts.isLoading, shallowEqual)
+  // const contacts = useSelector(state => state.contacts.items, shallowEqual);
+  // const isLoading = useSelector(state => state.contacts.isLoading, shallowEqual);
 
   return (
     <div>
@@ -16,14 +19,11 @@ export const App = () => {
       </Section>
       <Section>
         <h2>Contacts</h2>
-        {contacts.length ? (
-          <>
+       {isLoading && <ThreeDots wrapperClass='loader' color='black' width="100"/>}
             <Filter />
             <ContactsList />
-          </>
-        ) : (
-          <EmptyNotification />
-        )}
+        {/* {!contacts.length && <EmptyNotification />} */}
+      
       </Section>
     </div>
   );
