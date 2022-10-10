@@ -1,0 +1,68 @@
+.menu{
+
+   padding: 0;
+    list-style: none;
+
+}
+.bar{
+    padding: 0 10px 0 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f0f0;
+}
+.layout{
+    display: flex;
+    min-height: 100vh;
+
+}
+.logo{
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    font-style: italic;
+    color: rgb(250, 124, 56);
+}
+.aside{
+    width: 50px;
+    background-color: #f1f0f0;
+}
+.main{
+    width: 100%;
+    background-color: #f1f0f050;
+}
+.authList{
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    
+    list-style: none;
+
+}
+/* .authNav{
+
+} */
+.icon{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    color: inherit;
+
+    border-radius: 50%;
+
+        background-color: #f1f0f0;
+    transition: transform 200ms ease-in;
+}
+.icon:hover, 
+.icon:focus {
+
+    transform: scale(1.4);
+}
+.active{
+    color:rgb(250, 124, 56);
+}
+.disactive{
+    color: darkgray;
+}

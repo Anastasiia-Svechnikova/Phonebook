@@ -7,13 +7,14 @@ export const Filter = () => {
     const filter = useSelector(state => state.filter, shallowEqual);
     const dispatch = useDispatch();
     return (
-        <label className='label'>
-            Find contacts by name
+
+        <label className={s.label}>
+            Filter:
             <input
                 onChange={(e)=> dispatch(setFilterAction(e.currentTarget.value))}
                 type="text"
                 value={filter}
-                placeholder='start typing the name...'
+                placeholder='   start typing the name...'
                 className={s.input}
             ></input>
         </label>

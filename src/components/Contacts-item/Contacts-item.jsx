@@ -14,8 +14,8 @@ export const ContactsItem = ({name, phone, deleteHandler}) =>{
     return (
         <li onMouseOut={onItemMouseleave} onMouseOver={onItemMouseOver} className={s.item}>
             <span className={s.name}>{name}:</span>
-            <span className='contact-num'>{phone}</span>
-            <Button  dlt type="button" onClickHandler={deleteHandler}>Delete</Button>
+            <span className={s.number}>{phone}</span>
+            <Button  primary type="button" onClickHandler={deleteHandler}>Delete</Button>
         </li>
     )
 }

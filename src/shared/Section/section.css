@@ -1,10 +1,10 @@
 .section{
     position: relative;
-    width: 600px;
-    margin: 50px auto;
-    padding: 30px;
+    /* width: 600px; */
+    /* margin: 50px auto; */
+padding: 20px;
 
-    border: 1px solid #000;
-    background-color:rgb(254, 248, 231)
+    /* border: 1px solid #000; */
+    /* background-color:rgb(254, 248, 231) */
 
 }

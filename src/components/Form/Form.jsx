@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-// import { nanoid } from 'nanoid';
+
 import s from "./form.module.css";
 import { Button } from "../../shared/Button";
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-// import { addContact } from "store/actions/contactsActions";
-// import API from "services/api/contacts.api";
 import { addContactThunk } from "store/contacts/thunk.contacts";
+import { BsFillPersonPlusFill } from 'react-icons/bs';
 
-// API.addContact({name: 'cat', phone: '45654564'}).then(console.log).catch(console.log)
 
 export const Form =()=> {
     const [name, setName] = useState('');
@@ -15,7 +13,7 @@ export const Form =()=> {
 
     const contacts = useSelector(state=> state.contacts.items, shallowEqual)
     const dispatch = useDispatch();
-    // console.log(contacts)
+
     const onInputChange = e => {
         switch (e.currentTarget.name) {
             case 'name':
@@ -45,8 +43,9 @@ export const Form =()=> {
         setNumber('');
     }
 
-        return (
-            <form className={s.form} onSubmit={onFormSubmit}>  
+    return (
+            
+            <div className={s.wrapper}><form className={s.form} onSubmit={onFormSubmit}>  
                 <label className={s.label}>
                     Name 
                     <input onChange={onInputChange}
@@ -72,8 +71,8 @@ export const Form =()=> {
                         required
                     />
                 </label>
-                <Button type="submit" sbmt >Add contact</Button>
-        </form>
+                <Button type="submit" secondary ><BsFillPersonPlusFill/> Add contact</Button>
+        </form></div>
     )
 }
 

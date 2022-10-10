@@ -11,7 +11,6 @@ export const getContactsThunk = createAsyncThunk('contacts/getContacts', async(_
 
 export const addContactThunk = createAsyncThunk('contacts/addContact', async(contact, thunkAPI) => {
     try {
-        console.log(contact)
         await API.addContact(contact);
         thunkAPI.dispatch(getContactsThunk())
     } catch (error) {
@@ -20,7 +19,6 @@ export const addContactThunk = createAsyncThunk('contacts/addContact', async(con
 })
 export const deleteContactThunk = createAsyncThunk('contacts/deleteContact', async(id, thunkAPI) => {
     try {
-        console.log(id)
         await API.deleteContact(id);
         thunkAPI.dispatch(getContactsThunk())
     } catch (error) {

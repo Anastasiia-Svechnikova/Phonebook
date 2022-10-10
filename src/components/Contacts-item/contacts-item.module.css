@@ -2,19 +2,22 @@
     height: 40px;
     display: flex;
     margin-bottom: 15px;
-    border-bottom: 1px solid rgb(88, 87, 87);
+    border-bottom: 1px solid rgba(169, 169, 169, 0.288);
 
     transition: transform 150ms ease-in;
 
 }
 
 .name {
-    font-family: serif;
-    font-style: italic;
+    font-size: 18px;
     min-width: 40%
+}
+.number{
+        font-size: 15px;
+        color: rgb(125, 124, 124);
 }
 
 
 .focus {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }

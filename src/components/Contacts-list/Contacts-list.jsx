@@ -3,14 +3,17 @@ import { ContactsItem } from '../Contacts-item';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import s from './contacts-list.module.css';
 import { getContactsThunk, deleteContactThunk } from 'store/contacts/thunk.contacts';
+import { Loader } from 'shared/Loader';
+import classNames from 'classnames';
+
 
 
 export const ContactsList = () => {
   const contacts = useSelector(state => state.contacts.items, shallowEqual)
   const filter = useSelector(state => state.filter, shallowEqual);
+  const isLoading = useSelector(state=> state.contacts.isLoading, shallowEqual)
 
   const dispatch = useDispatch();
-
 
 
   useEffect(() => {
@@ -37,6 +40,12 @@ export const ContactsList = () => {
     />
   ));
     
-  return <ul className={s.list}>{elements}</ul>
+  return (
+
+    <>{isLoading && <Loader />}
+    <ul className={classNames(s.list, {[s.disabled]: isLoading})}>{elements}</ul>
+    </>
+    
+  ) 
   
 }
