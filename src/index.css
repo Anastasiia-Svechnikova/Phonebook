@@ -1,4 +1,8 @@
 /* @import-normalize; bring in normalize.css styles */
+:root{
+  --accent-color: rgb(250, 124, 56);
+  --main-color: darkgray;
+}
 
 body {
   margin: 0;

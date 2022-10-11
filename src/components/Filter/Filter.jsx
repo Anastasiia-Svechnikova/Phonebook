@@ -1,10 +1,11 @@
-import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { setFilterAction } from 'store/filter/slice.filter';
+import { selectFilter } from 'store/selectors';
 import s from './filter.module.css';
 
 
 export const Filter = () => {
-    const filter = useSelector(state => state.filter, shallowEqual);
+    const filter = useSelector(selectFilter);
     const dispatch = useDispatch();
     return (
 

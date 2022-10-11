@@ -21,7 +21,7 @@
     font-size: 30px;
     font-family: 'Indie Flower', cursive;
     font-style: italic;
-    color: rgb(250, 124, 56);
+    color: var(--accent-color);
 }
 .aside{
     width: 50px;
@@ -41,9 +41,6 @@
     list-style: none;
 
 }
-/* .authNav{
-
-} */
 .icon{
     width: 30px;
     height: 30px;
@@ -52,7 +49,7 @@
 
     border-radius: 50%;
 
-        background-color: #f1f0f0;
+    background-color: #f1f0f0;
     transition: transform 200ms ease-in;
 }
 .icon:hover, 
@@ -61,8 +58,8 @@
     transform: scale(1.4);
 }
 .active{
-    color:rgb(250, 124, 56);
+    color:var(--accent-color);
 }
 .disactive{
-    color: darkgray;
+    color: var(--main-color);
 }

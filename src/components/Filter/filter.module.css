@@ -8,12 +8,12 @@
     min-width: 200px;
     height: 30px;
     margin-left: 20px;
-    outline-color: rgb(250, 124, 56);
+    outline-color: var(--accent-color);
     border-radius: 2px;
-    border: 1px solid darkgray;
+    border: 1px solid var(--main-color);
 }
 .input::placeholder{
-    color:rgb(250, 124, 56);
+    color:var(--accent-color);
 }
 .input:focus {
     background-color: rgba(250, 124, 56, 0.053);

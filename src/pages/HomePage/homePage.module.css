@@ -2,7 +2,7 @@
     font-size: 30px;
     font-family: 'Indie Flower', cursive;
     font-style: italic;
-    color: rgb(250, 124, 56);
+    color: var(--accent-color);
 }
 
 .title{

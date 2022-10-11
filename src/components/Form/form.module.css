@@ -17,9 +17,9 @@ background-color: #fff;
 .input{
 height: 30px;
 margin-left: 9px;
-outline-color: rgb(250, 124, 56);
+outline-color: var(--accent-color);
 border-radius: 2px;
-border: 1px solid darkgray;
+border: 1px solid var(--main-color);
 }
 .input:focus {
     background-color: rgba(250, 124, 56, 0.053);

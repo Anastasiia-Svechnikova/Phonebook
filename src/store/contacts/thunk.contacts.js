@@ -3,7 +3,7 @@ import API from 'services/api/contacts.api';
 
 export const getContactsThunk = createAsyncThunk('contacts/getContacts', async(_, thunkAPI) => {
     try {
-        return API.getAllContacts();
+        return await API.getAllContacts();
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
     }

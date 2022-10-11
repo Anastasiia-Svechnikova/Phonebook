@@ -2,16 +2,17 @@ import React, { useState } from "react";
 
 import s from "./form.module.css";
 import { Button } from "../../shared/Button";
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunk } from "store/contacts/thunk.contacts";
 import { BsFillPersonPlusFill } from 'react-icons/bs';
+import { selectAllContacts } from "store/selectors";
 
 
 export const Form =()=> {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
 
-    const contacts = useSelector(state=> state.contacts.items, shallowEqual)
+    const contacts = useSelector(selectAllContacts)
     const dispatch = useDispatch();
 
     const onInputChange = e => {
@@ -43,8 +44,7 @@ export const Form =()=> {
         setNumber('');
     }
 
-    return (
-            
+    return (          
             <div className={s.wrapper}><form className={s.form} onSubmit={onFormSubmit}>  
                 <label className={s.label}>
                     Name 

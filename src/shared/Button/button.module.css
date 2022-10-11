@@ -6,7 +6,7 @@
 
     border-radius: 3px;
     border: none;
-    background-color: rgb(250, 124, 56);
+    background-color: var(--accent-color);
     color: #fff;
     transition: transform 200ms ease-in-out;
 }

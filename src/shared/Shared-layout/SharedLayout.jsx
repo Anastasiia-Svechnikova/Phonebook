@@ -29,7 +29,6 @@ export const SharedLayout = () => {
             </div>
                 <div className={s.main}>
                     <main>
-
                 <Outlet/>
                     </main>
             </div>           
