@@ -23,11 +23,17 @@ const contactsSlice = createSlice({
         [getContactsThunk.rejected]: handleRejected,
 
         [addContactThunk.pending]: handlePending,
-        [addContactThunk.fulfilled]: state => { state.isLoading = false },
+        [addContactThunk.fulfilled]: (state, { payload}) => {
+            state.isLoading = false;
+            state.items.push(payload);
+        },
         [addContactThunk.rejected]: handleRejected,
 
         [deleteContactThunk.pending]: handlePending,
-        [deleteContactThunk.fulfilled]: state => { state.isLoading = false },
+        [deleteContactThunk.fulfilled]: (state, { payload }) => {
+            state.isLoading = false;
+            state.items = state.items.filter(el => el.id !== payload)
+        },
         [deleteContactThunk.rejected]: handleRejected,
         
     }

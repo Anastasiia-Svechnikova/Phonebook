@@ -11,16 +11,18 @@ export const getContactsThunk = createAsyncThunk('contacts/getContacts', async(_
 
 export const addContactThunk = createAsyncThunk('contacts/addContact', async(contact, thunkAPI) => {
     try {
-        await API.addContact(contact);
-        thunkAPI.dispatch(getContactsThunk())
+        const data = await API.addContact(contact);
+        return data.data;
+        // thunkAPI.dispatch(getContactsThunk())
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
     }
 })
 export const deleteContactThunk = createAsyncThunk('contacts/deleteContact', async(id, thunkAPI) => {
     try {
-        await API.deleteContact(id);
-        thunkAPI.dispatch(getContactsThunk())
+        const data= await API.deleteContact(id);
+        return data.data.id
+        // thunkAPI.dispatch(getContactsThunk())
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
     }
