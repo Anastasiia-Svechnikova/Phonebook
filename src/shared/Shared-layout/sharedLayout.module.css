@@ -41,6 +41,19 @@
     list-style: none;
 
 }
+.exit{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background-color: inherit;
+    font-size: 18px;
+    color: var(--main-color);
+}
+.exitIcon{
+    color: var(--accent-color);
+
+}
 .icon{
     width: 30px;
     height: 30px;

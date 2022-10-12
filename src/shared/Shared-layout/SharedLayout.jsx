@@ -1,7 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
 import s from "./sharedLayout.module.css"
 import { AiFillHome} from 'react-icons/ai';
-import { TiContacts} from 'react-icons/ti';
+import { TiContacts } from 'react-icons/ti';
+import { BiExit } from 'react-icons/bi';
+
 
 
 export const SharedLayout = () => {
@@ -9,10 +11,10 @@ export const SharedLayout = () => {
         <>
             <header className={s.bar}>
                 <span className={s.logo}>Phonebook</span>
-                <ul className={s.authList}>
-                    <li>Log in</li>
-                    <li>Log out</li>
-                </ul>
+                {/* <ul className={s.authList}> */}
+                    
+                    <button type="button" className={s.exit}><BiExit className={ s.exitIcon} />  Exit</button>
+                {/* </ul> */}
             </header>
         <div className={s.layout}>
             <div className={s.aside}> 

@@ -3,15 +3,17 @@ import classNames from 'classnames';
 import s from './button.module.css';
 
 
-export const Button = ({ type, primary = false, secondary = false, onClickHandler, children, isLoading = false }) => {
+export const Button = ({ type, primary = false, secondary = false, onClickHandler = null, children, width = null, height = null }) => {
 
     return (
         <button className={classNames(s.btn, {
             [s.primary]: primary && !secondary,
             [s.secondary]: secondary,
         })}
+            style={{width: width, height: height}}
             type={type}
-            onClick={onClickHandler}>{children}</button>
+            onClick={onClickHandler}>{children}
+        </button>
     )
 }
 
