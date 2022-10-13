@@ -19,11 +19,11 @@ export const ContactsList = () => {
     dispatch(getContactsThunk())
   }, [dispatch])
 
-  const elements = filteredContacts.map(({ id, name, phone }) => (
+  const elements = filteredContacts.map(({ id, name, number }) => (
     <ContactsItem
       key={id}
       name={name}
-      phone={phone}
+      number={number}
       deleteHandler={() => dispatch(deleteContactThunk(id))}
     />
   ));
