@@ -59,4 +59,28 @@
 }
 .link{
     color: var(--main-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.password {
+    position: relative;
+}
+
+.eyeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+
+    border: none;
+    background-color: inherit;
+
+}
+
+.eye {
+    width: 18px;
+    height: 18px;
+    color: var(--main-color);
 }
