@@ -45,7 +45,7 @@ export const LoginPage = () => {
                             name="email"
                             placeholder="E-mail"
                             pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
-                            title="invalid password"
+                            title="example@mail.com"
                         required/>
                     </label>
                     <label className={s.password}>

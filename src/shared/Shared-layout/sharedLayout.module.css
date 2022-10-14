@@ -49,6 +49,12 @@
     background-color: inherit;
     font-size: 18px;
     color: var(--main-color);
+    /* cursor: pointer; */
+
+}
+.exit:hover,
+.exit:focus{
+    color: var(--accent-color);
 }
 .exitIcon{
     color: var(--accent-color);

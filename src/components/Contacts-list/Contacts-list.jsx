@@ -5,19 +5,22 @@ import s from './contacts-list.module.css';
 import { getContactsThunk, deleteContactThunk } from 'store/contacts/thunk.contacts';
 import { Loader } from 'shared/Loader';
 import classNames from 'classnames';
-import { selectFilteredContacts, selectIsLoading } from 'store/selectors';
+import { selectFilteredContacts, selectIsLoading, selectUser } from 'store/selectors';
 
 
 
 export const ContactsList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   const isLoading = useSelector(selectIsLoading);
+  const user = useSelector(selectUser)
   const dispatch = useDispatch();
-
+  console.log(user);
 
   useEffect(() => {   
-    dispatch(getContactsThunk())
-  }, [dispatch])
+    if (user) {     
+      dispatch(getContactsThunk())
+    }
+  }, [dispatch, user])
 
   const elements = filteredContacts.map(({ id, name, number }) => (
     <ContactsItem

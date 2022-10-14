@@ -11,8 +11,6 @@ const unsetToken = () => {
     contactsAPI.defaults.headers.Authorization = '';
 }
 
-// const BASE_URL = 'https://633755a7132b46ee0be07a72.mockapi.io/contacts'
-// const BASE_URL = 'https://connections-api.herokuapp.com'
 
 const getAllContacts = async () => {
     try {
@@ -54,7 +52,7 @@ const loginUser = async (user) => {
 }
 const logoutUser = async () => {
     try {
-         return await contactsAPI.post('/users/login');
+         return await contactsAPI.post('/users/logout');
         
     } catch(error) {
          throw new Error(error.message)
