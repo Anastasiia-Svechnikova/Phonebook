@@ -3,7 +3,7 @@ import s from './loginPage.module.css';
 import {Link} from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom"; 
+// import { useNavigate } from "react-router-dom"; 
 import { loginUserThunk } from "store/auth/thunk.auth";
 import { AiFillEye } from 'react-icons/ai';
 import { AiFillEyeInvisible} from 'react-icons/ai';
@@ -12,7 +12,7 @@ export const LoginPage = () => {
     const [user, setUser] = useState({ email: '', password: '' });
     const [passwordBtn, setPasswordBtn] = useState('password');
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
 
     const handleInputChange = (e) => {
@@ -21,7 +21,7 @@ export const LoginPage = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         console.log(user)
-        dispatch(loginUserThunk(user)).unwrap().then(()=>navigate('/'))
+        dispatch(loginUserThunk(user)).unwrap().then(console.log)
     }
     const handlePasswordBtn = () => {
         setPasswordBtn(prevState=>  prevState === 'password'? 'text': 'password')

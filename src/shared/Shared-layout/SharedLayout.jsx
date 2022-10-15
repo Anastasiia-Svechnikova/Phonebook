@@ -5,17 +5,17 @@ import { AiFillHome} from 'react-icons/ai';
 import { TiContacts } from 'react-icons/ti';
 import { BiExit } from 'react-icons/bi';
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom"; 
+// import { useNavigate } from "react-router-dom"; 
 import { logoutUserThunk } from "store/auth/thunk.auth";
 
 
 
 export const SharedLayout = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     
     const handleExit = () => {
-        dispatch(logoutUserThunk()).unwrap().then(()=>navigate('/login'))
+        dispatch(logoutUserThunk()).unwrap().then(console.log)
         
     }
 
