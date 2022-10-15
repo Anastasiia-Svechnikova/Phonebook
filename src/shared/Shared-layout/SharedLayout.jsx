@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+  import { Suspense } from "react";
 import s from "./sharedLayout.module.css"
 import { AiFillHome} from 'react-icons/ai';
 import { TiContacts } from 'react-icons/ti';
@@ -42,7 +43,9 @@ export const SharedLayout = () => {
             </div>
                 <div className={s.main}>
                     <main>
-                <Outlet/>
+                        <Suspense fallback='Wait a moment....'>
+                            <Outlet/>
+                        </Suspense>
                     </main>
             </div>           
         </div>

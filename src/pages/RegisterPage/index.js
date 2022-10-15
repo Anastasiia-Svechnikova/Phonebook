@@ -1,1 +1,1 @@
-export { RegisterPage } from './RegisterPage.jsx';
+export { RegisterPage as default} from './RegisterPage.jsx';
