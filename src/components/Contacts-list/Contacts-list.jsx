@@ -14,7 +14,6 @@ export const ContactsList = () => {
   const isLoading = useSelector(selectIsLoading);
   const user = useSelector(selectUser)
   const dispatch = useDispatch();
-  console.log(user);
 
   useEffect(() => {   
     if (user) {     

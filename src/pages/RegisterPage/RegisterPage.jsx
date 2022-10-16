@@ -1,13 +1,12 @@
 import { Button } from "shared/Button"
 import s from './registerPage.module.css';
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom"; 
 import { useState } from "react";
-// import API from "services/api/contacts.api";
 import { AiFillEye } from 'react-icons/ai';
 import { AiFillEyeInvisible} from 'react-icons/ai';
 import { useDispatch } from "react-redux";
 import { registerUserThunk } from "store/auth/thunk.auth";
+import { toast } from "react-toastify";
 
 
 
@@ -15,15 +14,13 @@ export const RegisterPage = () => {
     const [user, setUser] = useState({ name: '', email: '', password: '' });
     const [passwordBtn, setPasswordBtn] = useState('password');
     const dispatch = useDispatch();
-    // const navigate = useNavigate()
-
 
     const handleInputChange = (e) => {
         setUser(prevState => { return { ...prevState,[e.target.name]:e.target.value } })
     }
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        dispatch(registerUserThunk(user)).unwrap().then(console.log)
+        dispatch(registerUserThunk(user)).unwrap().then(()=> toast.success('Welcome!'))
     }
     const handlePasswordBtn = () => {
         setPasswordBtn(prevState=>  prevState === 'password'? 'text': 'password')

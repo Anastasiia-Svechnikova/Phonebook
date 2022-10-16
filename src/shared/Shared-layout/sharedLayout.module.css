@@ -79,6 +79,6 @@
 .active{
     color:var(--accent-color);
 }
-.disactive{
+.inactive{
     color: var(--main-color);
 }

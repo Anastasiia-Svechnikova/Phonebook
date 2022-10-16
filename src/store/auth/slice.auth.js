@@ -12,7 +12,6 @@ const authSlice = createSlice({
             state.isLoggedIn = true;
         },
         [loginUserThunk.fulfilled]: (state, { payload }) => {
-            console.log(payload)
             state.user = payload.user;
             state.token = payload.token;
             state.isLoggedIn = true;
@@ -23,7 +22,6 @@ const authSlice = createSlice({
             state.isLoggedIn = false;
         },
         [refreshUserThunk.fulfilled]:(state, { payload }) => {
-            console.log(payload)
             state.user = payload;
             state.isLoggedIn = true;
         },

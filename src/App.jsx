@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+ import 'react-toastify/dist/ReactToastify.css';
 import { refreshUserThunk } from 'store/auth/thunk.auth';
 import { selectToken, selectUser } from 'store/selectors';
 import { AppRoutes } from './Routes/App-Routes';

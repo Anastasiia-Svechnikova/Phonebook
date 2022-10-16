@@ -21,7 +21,8 @@ export const AppRoutes = () => {
       <Route path="/" element={<PublicRoute />}>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-      </Route>
+          </Route>
+
     </Routes>
   );
 };

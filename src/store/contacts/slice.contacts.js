@@ -33,7 +33,6 @@ const contactsSlice = createSlice({
         [deleteContactThunk.fulfilled]: (state, { payload }) => {
             state.isLoading = false;
             state.items = state.items.filter(el => el.id !== payload)
-            console.log(state.items)
         },
         [deleteContactThunk.rejected]: handleRejected,
         
