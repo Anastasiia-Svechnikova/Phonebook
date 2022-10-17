@@ -8,12 +8,11 @@ import { AppRoutes } from './Routes/App-Routes';
 export const App = () => {
   const user = useSelector(selectUser);
   const token = useSelector(selectToken);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (!user && token) {
-      dispatch(refreshUserThunk());
+      dispatch(refreshUserThunk())
     }
   }, [dispatch, user, token]);
 

@@ -21,13 +21,14 @@ const authSlice = createSlice({
             state.token = '';
             state.isLoggedIn = false;
         },
-        [refreshUserThunk.fulfilled]:(state, { payload }) => {
+        [refreshUserThunk.fulfilled]: (state, { payload }) => {
             state.user = payload;
             state.isLoggedIn = true;
         },
-
+        [refreshUserThunk.rejected]:(state) => {
+            state.token = null
+        },
     }
 })
-
 
 export const authReducer = authSlice.reducer

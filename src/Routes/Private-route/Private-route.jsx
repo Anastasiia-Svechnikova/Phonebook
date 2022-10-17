@@ -5,7 +5,8 @@ import { selectToken } from 'store/selectors';
 
 export const PrivateRoute = () => {
   const token = useSelector(selectToken);
-  return token ? (
+
+  return token? (
     <Suspense fallback="Wait a moment....">
       <Outlet />
     </Suspense>
