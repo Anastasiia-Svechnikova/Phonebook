@@ -7,6 +7,7 @@
     background-color: #f1f0f0;
 }
 .logo {
+    text-decoration: none;
     font-size: 30px;
     font-family: 'Indie Flower', cursive;
     font-style: italic;
@@ -18,7 +19,7 @@
     gap: 6px;
     border: none;
     background-color: inherit;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--main-color);
 
 }
@@ -32,9 +33,14 @@
     color: var(--accent-color);
 
 }
-.email{
+.user{
     margin-left: auto;
-    margin-right: 10px;
-    font-size: 12px;
-    color: var(--accent-color);
+    margin-right: 30px;
+    font-size: 15px;
+    color: var(--main-color);
+}
+.name{
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+        color: var(--accent-color);
 }

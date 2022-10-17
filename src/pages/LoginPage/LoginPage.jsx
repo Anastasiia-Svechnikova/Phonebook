@@ -59,7 +59,7 @@ export const LoginPage = () => {
                             required />
                             <button onClick={handlePasswordBtn} className={s.eyeBtn} type="button">{passwordBtn === 'password'? <AiFillEyeInvisible className={s.eye }/>:< AiFillEye className={s.eye }/>} </button>
                     </label>
-                    <Button width={252} height={40} type="submit" secondary>Log In</Button>
+                    <Button className={s.btn} width={'100%'} height={40} type="submit" primary>Log In</Button>
                     <Link className={s.link} to='/register'>Haven't got an account yet?</Link>
                 </form>
             </div>

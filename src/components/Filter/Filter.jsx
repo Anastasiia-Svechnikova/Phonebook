@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setFilterAction } from 'store/filter/slice.filter';
 import { selectFilter } from 'store/selectors';
 import s from './filter.module.css';
+import { BiSearch } from 'react-icons/bi';
+
 
 
 export const Filter = () => {
@@ -10,7 +12,7 @@ export const Filter = () => {
     return (
 
         <label className={s.label}>
-            Filter:
+             <BiSearch className={s.search } />
             <input
                 onChange={(e)=> dispatch(setFilterAction(e.currentTarget.value))}
                 type="text"

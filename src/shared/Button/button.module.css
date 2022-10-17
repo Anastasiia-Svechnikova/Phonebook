@@ -4,9 +4,9 @@
     align-items: center;
     gap: 5px;
 
-    border-radius: 3px;
+    border-radius: 7px;
     border: none;
-    background-color: var(--accent-color);
+   
     color: #fff;
     transition: transform 200ms ease-in-out;
 }
@@ -15,6 +15,7 @@
     transform: scale(1.1);
 }
 .primary {
+    background-color: var(--accent-color);
     height: 30px;
     width: 70px;
     margin-left: auto;  
@@ -22,6 +23,7 @@
 }
 
 .secondary {
+    background-color: transparent;
     width: 120px;   
 }
 

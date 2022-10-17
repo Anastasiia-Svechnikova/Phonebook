@@ -1,6 +1,7 @@
 .item {
     height: 40px;
     display: flex;
+    align-items: center;
     margin-bottom: 15px;
     border-bottom: 1px solid rgba(169, 169, 169, 0.288);
 
@@ -9,6 +10,7 @@
 }
 
 .name {
+    margin-left: 10px;
     font-size: 18px;
     min-width: 40%
 }
@@ -20,4 +22,34 @@
 
 .focus {
     transform: scale(1.02);
+}
+.editIcon, .done{
+    color: var(--accent-color);
+    width: 20px;
+    height: 20px;
+}
+.deleteIcon{
+    width: 20px;
+        height: 20px;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.input {
+    width: fit-content;
+    height: 30px;
+    margin-left: 9px;
+    outline-color: var(--accent-color);
+    border-radius: 2px;
+    border: 1px solid var(--main-color);
+}
+
+.input:focus {
+    background-color: rgba(250, 124, 56, 0.053);
+}
+.nameLabel{
+    margin-right: 200px;
 }

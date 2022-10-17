@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { ContactsItem } from '../Contacts-item';
 import { useSelector, useDispatch } from 'react-redux';
 import s from './contacts-list.module.css';
-import { getContactsThunk, deleteContactThunk } from 'store/contacts/thunk.contacts';
+import { getContactsThunk} from 'store/contacts/thunk.contacts';
 import { Loader } from 'shared/Loader';
 import classNames from 'classnames';
 import { selectFilteredContacts, selectIsLoading, selectUser } from 'store/selectors';
@@ -26,7 +26,7 @@ export const ContactsList = () => {
       key={id}
       name={name}
       number={number}
-      deleteHandler={() => dispatch(deleteContactThunk(id))}
+      id ={id}
     />
   ));
     

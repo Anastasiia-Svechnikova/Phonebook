@@ -1,20 +1,26 @@
 .label{
-    display: block;
+    display: flex;
     padding-left: 20px;
+    align-items: center;
     color: rgb(125, 124, 124);
 }
 .input {
     
     min-width: 200px;
     height: 30px;
-    margin-left: 20px;
+    margin-left: 10px;
     outline-color: var(--accent-color);
     border-radius: 2px;
     border: 1px solid var(--main-color);
 }
 .input::placeholder{
-    color:var(--accent-color);
+    color:var(--main-color);
 }
 .input:focus {
     background-color: rgba(250, 124, 56, 0.053);
+}
+.search{
+    color: var(--accent-color);
+    width: 20px;
+    height: 20px;
 }

@@ -34,6 +34,14 @@ const deleteContact = async (contactId) => {
         throw new Error(error.message)
     }
 }
+const editContact = async ({id, editedContact}) => {
+    try {
+        return await contactsAPI.patch(`contacts/${id}`, editedContact )
+    } catch (error) {
+        throw new Error(error.message)
+    }
+}
+
 const signUpUser = async(user) => {
     try {
         const res = await contactsAPI.post('/users/signup', user);
@@ -71,6 +79,7 @@ const API = {
     getAllContacts,
     addContact,
     deleteContact,
+    editContact,
     signUpUser,
     loginUser,
     logoutUser,

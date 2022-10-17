@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import s from "./form.module.css";
 import { Button } from "../../shared/Button";
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,28 +8,20 @@ import { selectAllContacts } from "store/selectors";
 
 
 export const Form =()=> {
-    const [name, setName] = useState('');
-    const [number, setNumber] = useState('');
+    const [contact, setContact] = useState({name: '', number: ''})
 
     const contacts = useSelector(selectAllContacts)
     const dispatch = useDispatch();
 
     const onInputChange = e => {
-        switch (e.currentTarget.name) {
-            case 'name':
-                setName(e.currentTarget.value);
-                break;
-            case 'number':
-                setNumber(e.currentTarget.value);
-                break;
-            default:
-                console.log(e.currentTarget.name + ' is not a valid value');
-        }
+        setContact(prevState => {
+            return {...prevState, [e.target.name] : e.target.value}
+        })
     }
     
     const onFormSubmit = e => {
         e.preventDefault();
-        const newContact = { name, number };
+        const newContact = contact
         
         if (contacts.some(({ name }) => name === newContact.name)) {
             alert(`${newContact.name} is already in contacts!`);
@@ -40,16 +31,16 @@ export const Form =()=> {
         formReset();
     }
     const formReset = () => {
-        setName('');
-        setNumber('');
+        setContact({name: '', number: ''})
     }
 
     return (          
-            <div className={s.wrapper}><form className={s.form} onSubmit={onFormSubmit}>  
+        <div className={s.wrapper}>
+            <form className={s.form} onSubmit={onFormSubmit}>  
                 <label className={s.label}>
                     Name 
                     <input onChange={onInputChange}
-                        value={name}
+                        value={contact.name}
                         className={s.input}
                         type="text"
                         name="name"
@@ -62,7 +53,7 @@ export const Form =()=> {
                     Number 
                     <input
                         onChange={onInputChange}
-                        value={number}
+                        value={contact.number}
                         className={s.input}
                         type="tel"
                         name="number"
@@ -71,8 +62,9 @@ export const Form =()=> {
                         required
                     />
                 </label>
-                <Button type="submit" secondary ><BsFillPersonPlusFill/> Add contact</Button>
-        </form></div>
+                <Button type="submit" width={130} primary ><BsFillPersonPlusFill/> Add contact</Button>
+            </form>
+        </div>
     )
 }
 

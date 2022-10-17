@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import contactsInitialState from "./initial-state.contacts";
-import { addContactThunk, getContactsThunk, deleteContactThunk } from "./thunk.contacts";
+import { addContactThunk, getContactsThunk, deleteContactThunk, editContactThunk } from "./thunk.contacts";
 
 const handlePending = (state) => {
     state.isLoading = true
@@ -25,7 +25,7 @@ const contactsSlice = createSlice({
         [addContactThunk.pending]: handlePending,
         [addContactThunk.fulfilled]: (state, { payload}) => {
             state.isLoading = false;
-            state.items.push(payload);
+            state.items.unshift(payload);
         },
         [addContactThunk.rejected]: handleRejected,
 
@@ -35,6 +35,13 @@ const contactsSlice = createSlice({
             state.items = state.items.filter(el => el.id !== payload)
         },
         [deleteContactThunk.rejected]: handleRejected,
+        [editContactThunk.pending]: handlePending,
+        [editContactThunk.rejected]: handleRejected,
+        [editContactThunk.fulfilled]: (state, {payload}) => {
+            state.isLoading = false;          
+            state.items = state.items.map(item => item.id === payload.id ? payload : item)
+
+        }
         
     }
 })

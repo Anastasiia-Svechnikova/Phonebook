@@ -68,7 +68,7 @@ export const RegisterPage = () => {
                             required />
                         <button onClick={handlePasswordBtn} className={s.eyeBtn} type="button">{passwordBtn === 'password'? <AiFillEyeInvisible className={s.eye }/>:< AiFillEye className={s.eye }/>} </button>
                     </label>
-                    <Button width={252} height={40} type="submit" secondary> Register</Button>
+                    <Button width={'100%'} height={40} type="submit" primary> Register</Button>
                      <Link className={s.link} to='/login'>Already have an account?</Link>
                 </form>
             </div>
