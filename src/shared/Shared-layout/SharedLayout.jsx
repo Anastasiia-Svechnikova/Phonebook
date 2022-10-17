@@ -3,27 +3,17 @@ import { NavLink, Outlet } from "react-router-dom";
 import s from "./sharedLayout.module.css"
 import { AiFillHome} from 'react-icons/ai';
 import { TiContacts } from 'react-icons/ti';
-import { BiExit } from 'react-icons/bi';
-import { useDispatch } from "react-redux";
-import { logoutUserThunk } from "store/auth/thunk.auth";
+import { UserMenu } from "components/User-menu";
 
 
 
 export const SharedLayout = () => {
-    const dispatch = useDispatch();
-    
-    const handleExit = () => {
-        dispatch(logoutUserThunk())       
-    }
 
     return (
         <>
-            <header className={s.bar}>
-                <span className={s.logo}>Phonebook</span>
-                    <button  type="button" onClick={handleExit} className={s.exit}><BiExit className={ s.exitIcon} />  Exit</button>
-            </header>
-        <div className={s.layout}>
-            <div className={s.aside}> 
+            <UserMenu/>
+            <div className={s.layout}>              
+            <header className={s.aside}> 
                 <nav>
                 <ul className={s.menu}>
                     <li>
@@ -34,7 +24,7 @@ export const SharedLayout = () => {
                     </li>
                 </ul>
             </nav>
-            </div>
+            </header>
                 <div className={s.main}>
                     <main>
                         <Suspense fallback='Wait a moment....'>
