@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { refreshUserThunk } from 'store/auth/thunk.auth';
 import { selectToken, selectUser } from 'store/selectors';
 import { AppRoutes } from './Routes/App-Routes';
+import { ToastContainer } from 'react-toastify';
+   import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   const user = useSelector(selectUser);
@@ -16,5 +18,11 @@ export const App = () => {
     }
   }, [dispatch, user, token]);
 
-  return <AppRoutes />;
+  return (
+    <>
+      <AppRoutes />
+      <ToastContainer/>
+    </>
+    
+  )
 };

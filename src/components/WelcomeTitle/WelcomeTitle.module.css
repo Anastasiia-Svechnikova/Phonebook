@@ -1,0 +1,21 @@
+.logo {
+    font-size: 50px;
+    font-family: 'Indie Flower', cursive;
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+.title {
+    width: 250px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: 30px;
+        width: 290px;
+    }
+}

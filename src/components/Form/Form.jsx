@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import s from "./form.module.css";
+import { toast} from 'react-toastify';
 import { Button } from "../../shared/Button";
 import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunk } from "store/contacts/thunk.contacts";
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { selectAllContacts } from "store/selectors";
+
 
 
 export const Form =()=> {
@@ -24,7 +26,10 @@ export const Form =()=> {
         const newContact = contact
         
         if (contacts.some(({ name }) => name === newContact.name)) {
-            alert(`${newContact.name} is already in contacts!`);
+            toast.warn(`${newContact.name} is already in contacts!`, {
+               autoClose: 4000,
+hideProgressBar: true,
+           });
             return;
         }
         dispatch(addContactThunk(newContact))
