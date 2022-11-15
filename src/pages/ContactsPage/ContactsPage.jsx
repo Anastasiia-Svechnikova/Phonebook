@@ -4,8 +4,9 @@ import { ContactsList } from 'components/Contacts-list';
 import { Filter } from 'components/Filter';
 import { selectError, } from 'store/selectors';
 import {  useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { refreshUserThunk } from 'store/auth/thunk.auth';
+
+
+
 
 export const ContactsPage = () => {
   const error = useSelector(selectError);
@@ -16,9 +17,11 @@ export const ContactsPage = () => {
       <Section>      
         <h1 className="hidden">Contacts</h1>
         <Filter />
-        <ContactsList />     
+          <ContactsList />
+            
       </Section>
       }
+      
     </div>
   );
 };
