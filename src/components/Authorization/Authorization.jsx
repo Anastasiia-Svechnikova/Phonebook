@@ -17,6 +17,7 @@ export const Authorization = ({ isLogin, isRegister }) => {
     const [user, setUser] = useState(initialUserState);
     const [passwordBtn, setPasswordBtn] = useState('password');
     const dispatch = useDispatch();
+    const navigatePath = isLogin ? '/register' : '/login'
      const isMobile= useMediaQuery({
     query: '(max-width: 767px)'
      })
@@ -82,7 +83,7 @@ export const Authorization = ({ isLogin, isRegister }) => {
                             <button onClick={handlePasswordBtn} className={s.eyeBtn} type="button">{passwordBtn === 'password'? <AiFillEyeInvisible className={s.eye }/>:< AiFillEye className={s.eye }/>} </button>
                     </label>
                     <Button className={s.btn} width={'100%'} height={40} type="submit" primary>{isLogin ? 'Log in': 'Register' }</Button>
-                    <Link className={s.link} to='/register'>Haven't got an account yet?</Link>
+                    <Link className={s.link} to={navigatePath}>{isLogin ? "Haven't got an account yet?": 'Already have an account?' } </Link>
                 </form>
             </div>
         </div>
