@@ -11,16 +11,28 @@ import { useMediaQuery } from 'react-responsive'
 import { WelcomeTitle } from 'components/WelcomeTitle';
 
 
+
 export const Authorization = ({ isLogin, isRegister }) => {
     const initialUserState = isLogin? { email: '', password: '' } : { name: '', email: '', password: '' }
 
     const [user, setUser] = useState(initialUserState);
     const [passwordBtn, setPasswordBtn] = useState('password');
     const dispatch = useDispatch();
-    const navigatePath = isLogin ? '/register' : '/login'
-     const isMobile= useMediaQuery({
+    const content = isLogin ?
+        {
+            navigatePath: '/register',
+            passwordPlaceholder: 'Password',
+            emailPlaceholder: 'E-mail'
+        } :
+        {
+            navigatePath: '/login',
+            passwordPlaceholder: "Min 5 symbols, 1 Num, 1 Upper",
+            emailPlaceholder: 'example@mail.com'
+        }
+    
+    const isMobile= useMediaQuery({
     query: '(max-width: 767px)'
-     })
+    })
     
     const handleInputChange = (e) => {
         setUser(prevState => { return { ...prevState,[e.target.name]:e.target.value } })
@@ -64,7 +76,7 @@ export const Authorization = ({ isLogin, isRegister }) => {
                             value={user.email}
                             type="mail"
                             name="email"
-                            placeholder="E-mail"
+                            placeholder={content.emailPlaceholder}
                             pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
                             title="example@mail.com"
                         required/>
@@ -76,14 +88,14 @@ export const Authorization = ({ isLogin, isRegister }) => {
                               value={user.password}
                             type={passwordBtn}
                             name="password"
-                            placeholder="Password"
+                            placeholder={content.passwordPlaceholder}
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}"
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters"
                             required />
                             <button onClick={handlePasswordBtn} className={s.eyeBtn} type="button">{passwordBtn === 'password'? <AiFillEyeInvisible className={s.eye }/>:< AiFillEye className={s.eye }/>} </button>
                     </label>
                     <Button className={s.btn} width={'100%'} height={40} type="submit" primary>{isLogin ? 'Log in': 'Register' }</Button>
-                    <Link className={s.link} to={navigatePath}>{isLogin ? "Haven't got an account yet?": 'Already have an account?' } </Link>
+                    <Link className={s.link} to={content.navigatePath}>{isLogin ? "Haven't got an account yet?": 'Already have an account?' } </Link>
                 </form>
             </div>
         </div>
